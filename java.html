@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Experiments - Practical Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- hello -->
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>Java Experiments</h1>
+        </header>
+        
+        <main>
+            <div class="toc">
+                <h2>Quick Navigation</h2>
+                <div class="toc-grid">
+                    <div class="toc-section">
+                        <a href="#exp1" class="toc-link main">Exp 1: Programming Paradigms</a>
+                        <div class="toc-sub">
+                            <span class="toc-sub-link">1) Procedural Programming</span>
+                            <span class="toc-sub-link">2) Object-Oriented Programming</span>
+                            <span class="toc-sub-link">3) Expert System</span>
+                        </div>
+                    </div>
+                    <div class="toc-section">
+                        <a href="#exp2" class="toc-link main">Exp 2: Data Types & JDK</a>
+                        <div class="toc-sub">
+                            <span class="toc-sub-link">1) Data Types & Sizes</span>
+                            <span class="toc-sub-link">2) Signed to Unsigned</span>
+                            <span class="toc-sub-link">3) Java Application</span>
+                        </div>
+                    </div>
+                    <div class="toc-section">
+                        <a href="#exp3" class="toc-link main">Exp 3: Classes & Methods</a>
+                        <div class="toc-sub">
+                            <span class="toc-sub-link">1) Employee Class</span>
+                            <span class="toc-sub-link">2) 'this' Keyword</span>
+                            <span class="toc-sub-link">3) Static Methods</span>
+                        </div>
+                    </div>
+                    <div class="toc-section">
+                        <a href="#exp4" class="toc-link main">Exp 4: Arrays & Strings</a>
+                        <div class="toc-sub">
+                            <span class="toc-sub-link">1) Array Manipulation</span>
+                            <span class="toc-sub-link">2) String Operations</span>
+                            <span class="toc-sub-link">3) StringBuffer</span>
+                            <span class="toc-sub-link">4) StringBuilder</span>
+                        </div>
+                    </div>
+                    <div class="toc-section">
+                        <a href="#exp5" class="toc-link main">Exp 5: Inheritance & OOP</a>
+                        <div class="toc-sub">
+                            <span class="toc-sub-link">1) Single Inheritance</span>
+                            <span class="toc-sub-link">2) Method Overriding</span>
+                            <span class="toc-sub-link">3) Multiple Inheritance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="exp1">
+                <h2>Experiment 1</h2>
+                
+                <div class="sub-experiment">
+                    <h3>1) Procedural Programming - Arithmetic Operations</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>public class ProceduralDemo {
+    public static void main(String[] args) {
+        int a = 14, b = 9;
+        
+        int sum = a + b;
+        int diff = a - b;
+        int mul = a * b;
+        int div = a / b;
+        
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + diff);
+        System.out.println("Product: " + mul);
+        System.out.println("Quotient: " + div);
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>2) Object-Oriented Programming - Student Class</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>class Student {
+    private String name;
+    private int rollNo;
+    private double marks;
+    
+    public Student(String name, int rollNo, double marks) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.marks = marks;
+    }
+    
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNo);
+        System.out.println("Marks: " + marks);
+    }
+    
+    public boolean hasPassed() {
+        return marks >= 40.0;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student1 = new Student("Sahil", 101, 85.5);
+        Student student2 = new Student("Rahul", 102, 35.0);
+        
+        student1.displayDetails();
+        System.out.println("Passed: " + student1.hasPassed());
+        System.out.println();
+        
+        student2.displayDetails();
+        System.out.println("Passed: " + student2.hasPassed());
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>3) Rule-Based Expert System - Weather Clothing Suggestions</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>import java.util.Scanner;
+
+public class ExpertSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter weather (sunny, rainy, cold): ");
+        String weather = sc.nextLine().toLowerCase();
+        
+        if (weather.equals("sunny")) {
+            System.out.println("Wear sunglasses and a t-shirt!");
+        } else if (weather.equals("rainy")) {
+            System.out.println("Carry an umbrella and wear a raincoat!");
+        } else if (weather.equals("cold")) {
+            System.out.println("Wear a jacket and scarf!");
+        } else {
+            System.out.println("No suggestion available.");
+        }
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="exp2">
+                <h2>Experiment 2</h2>
+                
+                <div class="sub-experiment">
+                    <h3>1) Data Types and Sizes - Simple Variables</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>public class DataTypesDemo {
+    public static void main(String[] args) {
+        byte b = 100;           // 1 byte
+        short s = 30000;        // 2 bytes
+        int i = 200000;         // 4 bytes
+        long l = 9000000000L;   // 8 bytes
+        float f = 3.14f;        // 4 bytes
+        double d = 3.14159;     // 8 bytes
+        char c = 'A';           // 2 bytes (Unicode)
+        boolean flag = true;    // JVM-dependent (usually 1 bit)
+        
+        System.out.println("byte: " + b + " Size: " + Byte.BYTES + " bytes");
+        System.out.println("short: " + s + " Size: " + Short.BYTES + " bytes");
+        System.out.println("int: " + i + " Size: " + Integer.BYTES + " bytes");
+        System.out.println("long: " + l + " Size: " + Long.BYTES + " bytes");
+        System.out.println("float: " + f + " Size: " + Float.BYTES + " bytes");
+        System.out.println("double: " + d + " Size: " + Double.BYTES + " bytes");
+        System.out.println("char: " + c + " Size: " + Character.BYTES + " bytes");
+        System.out.println("boolean: " + flag + " (size JVM-dependent)");
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>2) Signed to Unsigned Conversion - Bitwise Operations</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>public class UnsignedDemo {
+    public static void main(String[] args) {
+        int signed = -10;
+        long unsigned = signed &amp; 0xffffffffL; // mask with 32-bit
+        
+        System.out.println("Signed: " + signed);
+        System.out.println("Unsigned (32-bit): " + unsigned);
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>3) Simple Java Application - JDK Development Process</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>public class HelloApp {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="exp3">
+                <h2>Experiment 3</h2>
+                
+                <div class="sub-experiment">
+                    <h3>1) Employee Class - Class Fundamentals</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>// Save this as Employee.java if your compiler asks for file name
+class Employee {
+    // Attributes (fields)
+    String name;
+    int id;
+    double salary;
+    
+    // Constructor
+    Employee(String name, int id, double salary) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+    
+    // Method to display employee details
+    void displayDetails() {
+        System.out.println("Employee ID: " + id);
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee Salary: " + salary);
+    }
+    
+    // Method to give a raise
+    void giveRaise(double amount) {
+        salary += amount;
+        System.out.println(name + " got a raise of " + amount + ". New Salary: " + salary);
+    }
+    
+    // main method inside the same class
+    public static void main(String[] args) {
+        // Create Employee objects
+        Employee e1 = new Employee("Alice", 101, 50000);
+        Employee e2 = new Employee("Bob", 102, 60000);
+        
+        // Display details
+        System.out.println("Employee 1 Details:");
+        e1.displayDetails();
+        System.out.println("\nEmployee 2 Details:");
+        e2.displayDetails();
+        
+        // Give raises
+        System.out.println("\nGiving raise...");
+        e1.giveRaise(5000);
+        e2.giveRaise(7000);
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>2) Student Class - 'this' Keyword Usage</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>// Demonstrating use of 'this' keyword
+class Student {
+    // instance variables
+    String name;
+    int age;
+    
+    // Constructor with parameters having the same names as instance variables
+    Student(String name, int age) {
+        // 'this' differentiates instance variables from parameters
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Method to display student info
+    void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+    
+    // main method to run the program
+    public static void main(String[] args) {
+        Student s1 = new Student("Alice", 20);
+        Student s2 = new Student("Bob", 22);
+        
+        s1.display();
+        s2.display();
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>3) Rectangle Area Calculator - Static Methods and Variables</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>import java.util.Scanner;
+
+public class RectangleArea {
+    // Static variables
+    static double length;
+    static double width;
+    
+    // Static method to calculate area
+    static double calculateArea() {
+        return length * width;
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Input length and width
+        System.out.print("Enter the length of the rectangle: ");
+        length = sc.nextDouble();
+        
+        System.out.print("Enter the width of the rectangle: ");
+        width = sc.nextDouble();
+        
+        // Call static method to calculate area
+        double area = calculateArea();
+        System.out.println("The area of the rectangle is: " + area);
+        
+        sc.close();
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="exp4">
+                <h2>Experiment 4</h2>
+                
+                <div class="sub-experiment">
+                    <h3>1) Array Manipulation - Finding Largest Element</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>import java.util.Scanner;
+
+public class LargestInArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+        
+        int[] arr = new int[n];
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        int max = arr[0];
+        for (int i = 1; i &lt; n; i++) {
+            if (arr[i] &gt; max)
+                max = arr[i];
+        }
+        
+        System.out.println("Largest element is: " + max);
+        sc.close();
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>2) String Operations - Using String Class</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>public class StringOperations {
+    public static void main(String[] args) {
+        String str = "Java Programming";
+        
+        System.out.println("Original String: " + str);
+        System.out.println("Length: " + str.length());
+        System.out.println("Uppercase: " + str.toUpperCase());
+        System.out.println("Lowercase: " + str.toLowerCase());
+        System.out.println("Substring(0,4): " + str.substring(0, 4));
+        System.out.println("Index of 'P': " + str.indexOf('P'));
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>3) String Reversal - Using StringBuffer</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>import java.util.Scanner;
+
+public class ReverseStringBuffer {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+        
+        StringBuffer sb = new StringBuffer(input);
+        System.out.println("Reversed: " + sb.reverse());
+        
+        sc.close();
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>4) String Concatenation - Using StringBuilder</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>public class StringBuilderConcat {
+    public static void main(String[] args) {
+        String str1 = "Hello ";
+        String str2 = "World";
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append(str1);
+        sb.append(str2);
+        
+        System.out.println("Concatenated String: " + sb.toString());
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="exp5">
+                <h2>Experiment 5</h2>
+                
+                <div class="sub-experiment">
+                    <h3>1) Single Inheritance - Person and Student Classes</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>class Person {
+    String name;
+    int age;
+    
+    void displayPerson() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+class Student extends Person { // Student inherits from Person
+    String course;
+    
+    void displayStudent() {
+        displayPerson(); // call parent method
+        System.out.println("Course: " + course);
+    }
+}
+
+public class Main { // Main class to run
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.name = "Alice";
+        s.age = 20;
+        s.course = "Computer Science";
+        
+        s.displayStudent();
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>2) Method Overriding - Animal and Dog Classes</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal { // Dog inherits Animal
+    @Override
+    void sound() { // overriding parent method
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        a.sound(); // calls Animal's sound()
+        
+        Dog d = new Dog();
+        d.sound(); // calls Dog's overridden sound()
+        
+        // Polymorphism: parent reference, child object
+        Animal ref = new Dog();
+        ref.sound(); // calls Dog's sound() at runtime
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>3) Multiple Inheritance via Interfaces - Vehicle Management System</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>interface Engine {
+    void startEngine();
+}
+
+// Second interface
+interface Wheels {
+    void rotateWheels();
+}
+
+// Class implements both interfaces (multiple inheritance)
+class Car implements Engine, Wheels {
+    public void startEngine() {
+        System.out.println("Car engine started");
+    }
+    
+    public void rotateWheels() {
+        System.out.println("Car wheels are rotating");
+    }
+    
+    public void showDetails() {
+        System.out.println("This is a Car with engine and wheels.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        
+        myCar.showDetails();
+        myCar.startEngine();
+        myCar.rotateWheels();
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="back-to-top">
+            <a href="#" class="back-to-top-btn">↑ Back to Top</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

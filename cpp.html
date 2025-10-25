@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Experiments - Practical Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- hello -->
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>C++ Experiments</h1>
+        </header>
+        
+        <main>
+            <div class="toc">
+                <h2>Quick Navigation</h2>
+                <div class="toc-grid">
+                    <div class="toc-section">
+                        <a href="#exp1" class="toc-link main">Exp 1: Classes & Objects</a>
+                        <div class="toc-sub">
+                            <span class="toc-sub-link">a) Bank Account System</span>
+                            <span class="toc-sub-link">b) Area Calculator</span>
+                            <span class="toc-sub-link">c) Library Management</span>
+                            <span class="toc-sub-link">d) Number Swapping</span>
+                            <span class="toc-sub-link">e) Arithmetic Operations</span>
+                        </div>
+                    </div>
+                    <div class="toc-section">
+                        <a href="#exp2" class="toc-link main">Exp 2: Control Structures</a>
+                        <div class="toc-sub">
+                            <span class="toc-sub-link">1) Find Largest Number</span>
+                            <span class="toc-sub-link">2) Prime Number Check</span>
+                            <span class="toc-sub-link">3) Fibonacci Series</span>
+                            <span class="toc-sub-link">4) Skip Multiples of 5</span>
+                            <span class="toc-sub-link">5) Array Input/Display</span>
+                            <span class="toc-sub-link">6) Palindrome Check</span>
+                        </div>
+                    </div>
+                    <div class="toc-section">
+                        <a href="#exp3" class="toc-link main">Exp 3: Advanced Concepts</a>
+                        <div class="toc-sub">
+                            <span class="toc-sub-link">1) Complex Number Addition</span>
+                            <span class="toc-sub-link">2) Counter Increment</span>
+                            <span class="toc-sub-link">3) Distance Class</span>
+                            <span class="toc-sub-link">4) Single Inheritance</span>
+                            <span class="toc-sub-link">5) File Append</span>
+                            <span class="toc-sub-link">6) Word Counter</span>
+                            <span class="toc-sub-link">7) File Copy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="exp1">
+                <h2>Experiment 1: C++ Programs</h2>
+                
+                <div class="sub-experiment">
+                    <h3>a) Bank Account Management System - Class and Object</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class BankAccount {
+private:
+    string name;
+    int accountNumber;
+    float balance;
+
+public:
+    void createAccount(string accName, int accNum, float initialBal) {
+        name = accName;
+        accountNumber = accNum;
+        balance = initialBal;
+    }
+
+    void deposit(float amount) {
+        balance += amount;
+    }
+
+    void withdraw(float amount) {
+        if (amount &lt;= balance)
+            balance -= amount;
+        else
+            cout &lt;&lt; "Insufficient balance!" &lt;&lt; endl;
+    }
+
+    void display() {
+        cout &lt;&lt; "\nAccount Holder: " &lt;&lt; name &lt;&lt; endl;
+        cout &lt;&lt; "Account Number: " &lt;&lt; accountNumber &lt;&lt; endl;
+        cout &lt;&lt; "Balance: " &lt;&lt; balance &lt;&lt; endl;
+    }
+};
+
+int main() {
+    BankAccount acc;
+    acc.createAccount("Pooja", 12345, 1000.0);
+    acc.deposit(500.0);
+    acc.withdraw(200.0);
+    acc.display();
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>b) Area Calculator - Function Overloading</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Area {
+public:
+    // Area of Circle
+    float area(float radius) {
+        return 3.14 * radius * radius;
+    }
+
+    // Area of Rectangle
+    float area(float length, float breadth) {
+        return length * breadth;
+    }
+
+    // Area of Triangle
+    float area(int base, int height) {
+        return 0.5 * base * height;
+    }
+};
+
+int main() {
+    Area a;
+    float circleRadius = 5;
+    float rectLength = 6, rectBreadth = 4;
+    int triBase = 3, triHeight = 7;
+
+    cout &lt;&lt; "Area of Circle: " &lt;&lt; a.area(circleRadius) &lt;&lt; endl;
+    cout &lt;&lt; "Area of Rectangle: " &lt;&lt; a.area(rectLength, rectBreadth) &lt;&lt; endl;
+    cout &lt;&lt; "Area of Triangle: " &lt;&lt; a.area(triBase, triHeight) &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>c) Library Management System - Classes and Objects</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Book {
+private:
+    int bookID;
+    string title;
+    string author;
+
+public:
+    void addBook(int id, string t, string a) {
+        bookID = id;
+        title = t;
+        author = a;
+    }
+
+    void displayBook() {
+        cout &lt;&lt; "\nBook ID: " &lt;&lt; bookID &lt;&lt; endl;
+        cout &lt;&lt; "Title: " &lt;&lt; title &lt;&lt; endl;
+        cout &lt;&lt; "Author: " &lt;&lt; author &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Book b1;
+    int id;
+    string title, author;
+
+    cout &lt;&lt; "Enter Book ID: ";
+    cin &gt;&gt; id;
+    cin.ignore();
+    cout &lt;&lt; "Enter Book Title: ";
+    getline(cin, title);
+    cout &lt;&lt; "Enter Author Name: ";
+    getline(cin, author);
+
+    b1.addBook(id, title, author);
+    b1.displayBook();
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>d) Number Swapping - Reference Arguments</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+void swapNumbers(int &amp;a, int &amp;b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+
+    cout &lt;&lt; "Before Swapping:\n";
+    cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; ", y = " &lt;&lt; y &lt;&lt; endl;
+
+    swapNumbers(x, y);
+
+    cout &lt;&lt; "\nAfter Swapping:\n";
+    cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; ", y = " &lt;&lt; y &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>e) Arithmetic Operations - Interface Implementation</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Arithmetic {
+private:
+    int a, b;
+
+public:
+    void setValues(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    int add() {
+        return a + b;
+    }
+
+    int subtract() {
+        return a - b;
+    }
+
+    int multiply() {
+        return a * b;
+    }
+
+    float divide() {
+        if (b != 0)
+            return (float)a / b;
+        else
+            return 0; // handle divide-by-zero
+    }
+};
+
+int main() {
+    Arithmetic calc;
+    calc.setValues(20, 5);
+
+    cout &lt;&lt; "Addition: " &lt;&lt; calc.add() &lt;&lt; endl;
+    cout &lt;&lt; "Subtraction: " &lt;&lt; calc.subtract() &lt;&lt; endl;
+    cout &lt;&lt; "Multiplication: " &lt;&lt; calc.multiply() &lt;&lt; endl;
+    cout &lt;&lt; "Division: " &lt;&lt; calc.divide() &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="exp2">
+                <h2>Experiment 2: C++ Programs</h2>
+                
+                <div class="sub-experiment">
+                    <h3>1) Find Largest of Three Numbers - If-Else Statement</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cout &lt;&lt; "Enter three numbers: ";
+    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+
+    if (a &gt;= b &amp;&amp; a &gt;= c) {
+        cout &lt;&lt; "The largest number is: " &lt;&lt; a &lt;&lt; endl;
+    }
+    else if (b &gt;= a &amp;&amp; b &gt;= c) {
+        cout &lt;&lt; "The largest number is: " &lt;&lt; b &lt;&lt; endl;
+    }
+    else {
+        cout &lt;&lt; "The largest number is: " &lt;&lt; c &lt;&lt; endl;
+    }
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>2) Prime Number Check - While Loop</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, i = 2, flag = 0;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; n;
+
+    while (i &lt; n) {
+        if (n % i == 0) {
+            flag = 1;
+            break;
+        }
+        i++;
+    }
+
+    if (n &lt;= 1) {
+        cout &lt;&lt; n &lt;&lt; " is NOT a Prime number." &lt;&lt; endl;
+    }
+    else if (flag == 0) {
+        cout &lt;&lt; n &lt;&lt; " is a Prime number." &lt;&lt; endl;
+    }
+    else {
+        cout &lt;&lt; n &lt;&lt; " is NOT a Prime number." &lt;&lt; endl;
+    }
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>3) Fibonacci Series - Do-While Loop</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, a = 0, b = 1, next, i = 1;
+    cout &lt;&lt; "Enter the number of terms: ";
+    cin &gt;&gt; n;
+
+    cout &lt;&lt; "Fibonacci Series: ";
+    do {
+        cout &lt;&lt; a &lt;&lt; " ";
+        next = a + b;
+        a = b;
+        b = next;
+        i++;
+    } while (i &lt;= n);
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>4) Skip Multiples of 5 - Continue Statement</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for (int i = 1; i &lt;= 100; i++) {
+        if (i % 5 == 0) {
+            continue;
+        }
+        cout &lt;&lt; i &lt;&lt; " ";
+    }
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>5) One-Dimensional Array Input/Display</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout &lt;&lt; "Enter the number of elements: ";
+    cin &gt;&gt; n;
+
+    int arr[100];
+    cout &lt;&lt; "Enter " &lt;&lt; n &lt;&lt; " elements:" &lt;&lt; endl;
+    for (int i = 0; i &lt; n; i++) {
+        cin &gt;&gt; arr[i];
+    }
+
+    cout &lt;&lt; "You entered: ";
+    for (int i = 0; i &lt; n; i++) {
+        cout &lt;&lt; arr[i] &lt;&lt; " ";
+    }
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>6) Palindrome String Check - String Functions</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main() {
+    string str, rev;
+    cout &lt;&lt; "Enter a string: ";
+    cin &gt;&gt; str;
+
+    rev = str;
+    reverse(rev.begin(), rev.end());
+
+    if (str == rev) {
+        cout &lt;&lt; str &lt;&lt; " is a Palindrome." &lt;&lt; endl;
+    } else {
+        cout &lt;&lt; str &lt;&lt; " is NOT a Palindrome." &lt;&lt; endl;
+    }
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="exp3">
+                <h2>Experiment 3: Advanced C++ Concepts</h2>
+                
+                <div class="sub-experiment">
+                    <h3>1) Complex Number Addition - Operator Overloading</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Complex {
+    int real, imag;
+
+public:
+    Complex(int r = 0, int i = 0) {
+        real = r;
+        imag = i;
+    }
+
+    // Overload + operator
+    Complex operator+(const Complex &amp;c) {
+        return Complex(real + c.real, imag + c.imag);
+    }
+
+    void display() {
+        cout &lt;&lt; real &lt;&lt; " + " &lt;&lt; imag &lt;&lt; "i" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Complex c1(3, 4), c2(5, 6);
+    Complex c3 = c1 + c2; // uses overloaded +
+
+    cout &lt;&lt; "Sum: ";
+    c3.display();
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>2) Counter Increment - ++ Operator Overloading</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Counter {
+    int value;
+
+public:
+    Counter(int v = 0) : value(v) {}
+
+    // Overload prefix ++
+    Counter operator++() {
+        ++value;
+        return *this;
+    }
+
+    // Overload postfix ++
+    Counter operator++(int) {
+        Counter temp = *this;
+        value++;
+        return temp;
+    }
+
+    void display() {
+        cout &lt;&lt; "Value: " &lt;&lt; value &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Counter c(5);
+
+    ++c; // prefix
+    c.display();
+
+    c++; // postfix
+    c.display();
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>3) Distance Class - Explicit Type Casting</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Distance {
+    int meters;
+
+public:
+    Distance(int m) : meters(m) {}
+
+    int getMeters() {
+        return meters;
+    }
+};
+
+int main() {
+    Distance d = Distance(15); // explicit constructor
+
+    cout &lt;&lt; "Distance: " &lt;&lt; d.getMeters() &lt;&lt; " meters" &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>4) Student Class - Single Inheritance</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+class Person {
+public:
+    string name;
+    int age;
+
+    void inputPerson() {
+        cout &lt;&lt; "Enter name: ";
+        cin &gt;&gt; name;
+        cout &lt;&lt; "Enter age: ";
+        cin &gt;&gt; age;
+    }
+};
+
+class Student : public Person {
+public:
+    int rollNo;
+
+    void inputStudent() {
+        cout &lt;&lt; "Enter roll no: ";
+        cin &gt;&gt; rollNo;
+    }
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; ", Age: " &lt;&lt; age &lt;&lt; ", Roll No: " &lt;&lt; rollNo &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.inputPerson();
+    s.inputStudent();
+    s.display();
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>5) File Append Operation - File Handling</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main() {
+    ofstream file("example.txt", ios::app); // open in append mode
+
+    if (!file) {
+        cout &lt;&lt; "Error opening file!" &lt;&lt; endl;
+        return 1;
+    }
+
+    string text;
+    cout &lt;&lt; "Enter text to append: ";
+    getline(cin, text);
+
+    file &lt;&lt; text &lt;&lt; endl;
+    file.close();
+
+    cout &lt;&lt; "Data appended successfully!" &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>6) Word Counter - File Reading</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    ifstream file("example.txt");
+
+    if (!file) {
+        cout &lt;&lt; "File not found!" &lt;&lt; endl;
+        return 1;
+    }
+
+    string word;
+    int count = 0;
+
+    while (file &gt;&gt; word) {
+        count++;
+    }
+
+    cout &lt;&lt; "Total words in file: " &lt;&lt; count &lt;&lt; endl;
+    file.close();
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>7) File Copy Operation - File Handling</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main() {
+    ifstream src("source.txt");
+    ofstream dest("destination.txt");
+
+    if (!src || !dest) {
+        cout &lt;&lt; "Error opening file!" &lt;&lt; endl;
+        return 1;
+    }
+
+    char ch;
+    while (src.get(ch)) {
+        dest.put(ch);
+    }
+
+    cout &lt;&lt; "File copied successfully!" &lt;&lt; endl;
+
+    src.close();
+    dest.close();
+
+    return 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="back-to-top">
+            <a href="#" class="back-to-top-btn">↑ Back to Top</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

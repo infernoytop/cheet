@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Run - Practical Exam Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- hello -->
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1>How to Run Programs</h1>
+        </header>
+        
+        <main>
+            <div class="toc">
+                <h2>Quick Navigation</h2>
+                <div class="toc-grid">
+                    <a href="#cpp-section" class="toc-link">C++ Compilation & Execution</a>
+                    <a href="#java-section" class="toc-link">Java Compilation & Execution</a>
+                </div>
+            </div>
+
+            <div class="experiment" id="cpp-section">
+                <h2>C++ Compilation and Execution</h2>
+                
+                <div class="sub-experiment">
+                    <h3>Step 1: Save Your Code</h3>
+                    <div class="instruction-container">
+                        <p>Save your C++ code with a <code>.cpp</code> extension (e.g., <code>program.cpp</code>)</p>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Step 2: Open Terminal/Command Prompt</h3>
+                    <div class="instruction-container">
+                        <p><strong>Windows:</strong> Open Command Prompt or PowerShell</p>
+                        <p><strong>Linux/Mac:</strong> Open Terminal</p>
+                        <p>Navigate to the folder containing your .cpp file using <code>cd</code> command</p>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Step 3: Compile the Program</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>g++ -o program program.cpp</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p><strong>Explanation:</strong></p>
+                        <ul>
+                            <li><code>g++</code> - The C++ compiler</li>
+                            <li><code>-o program</code> - Creates executable named "program"</li>
+                            <li><code>program.cpp</code> - Your source code file</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Step 4: Run the Program</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>./program</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p><strong>On Windows:</strong></p>
+                        <div class="code-container">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                            <pre><code>program.exe</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Alternative: One-Step Compilation and Execution</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>g++ program.cpp && ./a.out</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p>This compiles and runs in one command (creates default executable <code>a.out</code>)</p>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Common Compiler Flags</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>g++ -Wall -std=c++17 -o program program.cpp</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p><strong>Useful flags:</strong></p>
+                        <ul>
+                            <li><code>-Wall</code> - Enable all warnings</li>
+                            <li><code>-std=c++17</code> - Use C++17 standard</li>
+                            <li><code>-g</code> - Include debugging information</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment" id="java-section">
+                <h2>Java Compilation and Execution</h2>
+                
+                <div class="sub-experiment">
+                    <h3>Step 1: Save Your Code</h3>
+                    <div class="instruction-container">
+                        <p>Save your Java code with a <code>.java</code> extension</p>
+                        <p><strong>Important:</strong> File name must match the public class name</p>
+                        <p>Example: If your class is <code>HelloWorld</code>, save as <code>HelloWorld.java</code></p>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Step 2: Open Terminal/Command Prompt</h3>
+                    <div class="instruction-container">
+                        <p><strong>Windows:</strong> Open Command Prompt or PowerShell</p>
+                        <p><strong>Linux/Mac:</strong> Open Terminal</p>
+                        <p>Navigate to the folder containing your .java file using <code>cd</code> command</p>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Step 3: Compile the Program</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>javac HelloWorld.java</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p><strong>Explanation:</strong></p>
+                        <ul>
+                            <li><code>javac</code> - The Java compiler</li>
+                            <li><code>HelloWorld.java</code> - Your source code file</li>
+                            <li>This creates <code>HelloWorld.class</code> (bytecode file)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Step 4: Run the Program</h3>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>java HelloWorld</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p><strong>Important Notes:</strong></p>
+                        <ul>
+                            <li>Use <code>java</code> (not <code>javac</code>) to run</li>
+                            <li>Use class name (not file name with .class extension)</li>
+                            <li>Case-sensitive: <code>HelloWorld</code> not <code>helloworld</code></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Complete Example</h3>
+                    <div class="instruction-container">
+                        <p><strong>1. Create file:</strong> <code>Student.java</code></p>
+                    </div>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>public class Student {
+    public static void main(String[] args) {
+        System.out.println("Hello, Student!");
+    }
+}</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p><strong>2. Compile:</strong></p>
+                    </div>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>javac Student.java</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p><strong>3. Run:</strong></p>
+                    </div>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>java Student</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Running Java Programs with Packages</h3>
+                    <div class="instruction-container">
+                        <p>If your Java file has a package declaration:</p>
+                    </div>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+                        <pre><code>package com.example;
+public class MyClass {
+    // class content
+}</code></pre>
+                    </div>
+                    <div class="instruction-container">
+                        <p><strong>Compile and run:</strong></p>
+                    </div>
+                    <div class="code-container">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy Command</button>
+                        <pre><code>javac com/example/MyClass.java
+java com.example.MyClass</code></pre>
+                    </div>
+                </div>
+                
+                <div class="sub-experiment">
+                    <h3>Common Issues and Solutions</h3>
+                    <div class="instruction-container">
+                        <p><strong>Error: "Could not find or load main class"</strong></p>
+                        <ul>
+                            <li>Check if .class file exists in the same directory</li>
+                            <li>Ensure class name matches exactly (case-sensitive)</li>
+                            <li>Make sure you're in the correct directory</li>
+                        </ul>
+                        
+                        <p><strong>Error: "javac is not recognized"</strong></p>
+                        <ul>
+                            <li>Java JDK is not installed or not in PATH</li>
+                            <li>Install JDK and set JAVA_HOME environment variable</li>
+                        </ul>
+                        
+                        <p><strong>Error: "Public class must be in a file with the same name"</strong></p>
+                        <ul>
+                            <li>File name must match the public class name exactly</li>
+                            <li>Example: <code>public class Test</code> must be in <code>Test.java</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="back-to-top">
+            <a href="#" class="back-to-top-btn">↑ Back to Top</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

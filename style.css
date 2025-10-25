@@ -1,0 +1,381 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* hello */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #58a6ff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+header p {
+    color: #8b949e;
+    font-size: 1.1rem;
+}
+
+/* Back button */
+.back-button {
+    display: inline-block;
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background-color: #21262d;
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #30363d;
+    border-color: #58a6ff;
+}
+
+/* Navigation buttons */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 40px;
+    background-color: #21262d;
+    color: #e6edf3;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 2px solid #30363d;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #58a6ff;
+    color: #0d1117;
+    border-color: #58a6ff;
+    transform: translateY(-2px);
+}
+
+.button-icon {
+    font-size: 1.5rem;
+}
+
+/* Table of Contents */
+.toc {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+.toc h2 {
+    color: #58a6ff;
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.toc-section {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.toc-link.main {
+    display: block;
+    padding: 12px 16px;
+    background-color: #58a6ff;
+    color: #0d1117;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+
+.toc-link.main:hover {
+    background-color: #4493f8;
+    transform: translateY(-1px);
+}
+
+.toc-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.toc-sub-link {
+    display: block;
+    padding: 6px 12px;
+    background-color: #30363d;
+    color: #8b949e;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-align: left;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.toc-sub-link:hover {
+    background-color: #484f58;
+    color: #e6edf3;
+}
+
+/* Experiments */
+.experiment {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+.experiment h2 {
+    color: #58a6ff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 10px;
+}
+
+.sub-experiment {
+    margin-bottom: 25px;
+}
+
+.sub-experiment h3 {
+    color: #f0f6fc;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+/* Code containers */
+.code-container {
+    position: relative;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #238636;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #2ea043;
+}
+
+.copy-btn.copied {
+    background-color: #58a6ff;
+}
+
+pre {
+    margin: 0;
+    padding: 20px;
+    padding-right: 100px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e6edf3;
+}
+
+/* Back to top */
+.back-to-top {
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+
+.back-to-top-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #21262d;
+    color: #58a6ff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.back-to-top-btn:hover {
+    background-color: #30363d;
+    border-color: #58a6ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    .button-group {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .nav-button {
+        max-width: 250px;
+    }
+    
+    header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .nav-button {
+        padding: 16px 24px;
+        font-size: 1.1rem;
+    }
+    
+    .experiment {
+        padding: 16px;
+    }
+    
+    pre {
+        padding: 15px;
+        padding-right: 80px;
+        font-size: 0.85rem;
+    }
+    
+    .copy-btn {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Instruction containers */
+.instruction-container {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.instruction-container p {
+    margin-bottom: 8px;
+    color: #e6edf3;
+    line-height: 1.6;
+}
+
+.instruction-container p:last-child {
+    margin-bottom: 0;
+}
+
+.instruction-container ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.instruction-container li {
+    margin-bottom: 4px;
+    color: #8b949e;
+    line-height: 1.5;
+}
+
+.instruction-container code {
+    background-color: #21262d;
+    color: #f0f6fc;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.instruction-container strong {
+    color: #58a6ff;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
